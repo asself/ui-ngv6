@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from '@shared/shared.module';
 import { RouteRoutingModule } from './routes-routing.module';
+// g6 pages
+import { G6Component } from './g6/g6.component';
+// directive pages
+import { DirectiveComponent } from './directive/directive.component';
 // dashboard pages
 import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
@@ -17,6 +21,8 @@ import { Exception500Component } from './exception/500.component';
 
 
 const COMPONENTS = [
+  DirectiveComponent,
+  G6Component,
   DashboardComponent,
   // passport pages
   UserLoginComponent,

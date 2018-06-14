@@ -5,6 +5,10 @@ import { environment } from '@env/environment';
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutFullScreenComponent } from '../layout/fullscreen/fullscreen.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
+// g6
+import { G6Component } from './g6/g6.component';
+// directive pages
+import { DirectiveComponent } from './directive/directive.component';
 // dashboard pages
 import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
@@ -19,12 +23,24 @@ import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: LayoutDefaultComponent,
+  //   children: [
+  //     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  //     { path: 'dashboard', component: DashboardComponent, data: { title: '仪表盘', titleI18n: 'dashboard' } },
+  //     // 业务子模块
+  //     // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
+  //   ]
+  // },
   {
     path: '',
     component: LayoutDefaultComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'directive', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent, data: { title: '仪表盘', titleI18n: 'dashboard' } },
+      { path: 'directive', component: DirectiveComponent },
+      { path: 'antvG6', component: G6Component }
       // 业务子模块
       // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
     ]

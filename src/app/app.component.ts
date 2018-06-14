@@ -28,8 +28,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.router.events
-      .pipe(filter(evt => evt instanceof NavigationEnd))
-      .subscribe(() => this.titleSrv.setTitle());
+    console.log('in app init');
+    // this.router.events
+    //   .pipe(filter(evt => evt instanceof NavigationEnd))
+    //   .subscribe(() => this.titleSrv.setTitle());
   }
 }

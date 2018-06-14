@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { MenuService, SettingsService, TitleService, ALAIN_I18N_TOKEN } from '@delon/theme';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { ACLService } from '@delon/acl';
+import {text} from '@angular/core/src/render3/instructions';
 
 /**
  * 用于应用启动时
@@ -62,13 +63,13 @@ export class StartupService {
     // }
     // mock
     const app: any = {
-      name: `ng-alain`,
-      description: `Ng-zorro admin panel front-end framework`
+      name: `ui-ngv6`,
+      description: `ngv6 admin panel front-end framework`
     };
     const user: any = {
       name: 'Admin',
       avatar: './assets/tmp/img/avatar.jpg',
-      email: 'cipchk@qq.com',
+      email: 'asself@qq.com',
       token: '123456789'
     };
     // 应用信息：包括站点名、描述、年份
@@ -80,18 +81,51 @@ export class StartupService {
     // 初始化菜单
     this.menuService.add([
       {
-        text: '主导航',
+        text: 'CodeCraft',
         group: true,
         children: [
           {
-            text: '仪表盘',
-            link: '/dashboard',
-            icon: 'anticon anticon-appstore-o'
+            text: '指令',
+            group: true,
+            link: '/directive',
+            icon: 'anticon anticon-appstore-o',
+            children: [
+              {
+                text: '自定义指令',
+                group: true,
+                children: [
+                  {
+                    text: ''
+                  },
+                  {
+                    text: ''
+                  }
+                ]
+              },
+              {
+                text: '子仪表盘2'
+              }
+            ]
           },
+        ]
+      },
+      {
+        text: 'CSS3',
+        group: true,
+        children: [
           {
-            text: '快捷菜单',
-            icon: 'anticon anticon-rocket',
-            shortcut_root: true
+            text: 'selector'
+          }
+        ]
+      },
+      {
+        text: 'AntV/g6',
+        group: true,
+        hideInBreadcrumb: true,
+        children: [
+          {
+            text: 'g6',
+            link: '/antvG6',
           }
         ]
       }

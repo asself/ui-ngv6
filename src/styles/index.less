@@ -1,1 +1,57 @@
 // 建议所有项目自定义样式放在该文件夹下
+.header {
+  .logo {
+    margin-left: -@header-padding;
+    width: @aside-wd;
+    transition: width 0.2s @layout-ease;
+    a {
+      display: block;
+      text-align: center;
+    }
+    span {
+      vertical-align: middle;
+      max-width: 100%;
+      animation: fadeIn 1s;
+      &.collapsed {
+        display: none;
+      }
+      &.expanded {
+        display: inline;
+      }
+    }
+  }
+
+}
+.aside-collapsed {
+  .header {
+    .logo {
+      width: @aside-collapsed-wd;
+      span {
+        &.collapsed {
+          display: inline;
+        }
+        &.expanded {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// Desktop
+// @media (min-width: @screen-sm) {}
+// Under pad
+@media (max-width: @screen-sm) {
+  .header {
+    .logo {
+      width: @aside-collapsed-wd !important;
+      img {
+        &.collapsed {
+          display: inline !important;
+        }
+        &.expanded {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

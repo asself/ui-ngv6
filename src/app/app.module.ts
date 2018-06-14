@@ -20,6 +20,8 @@ registerLocaleData(localeZhHans);
 import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
 
 export function StartupServiceFactory(startupService: StartupService): Function {
+  console.log('before startupService');
+  // return () => {};
   return () => startupService.load();
 }
 
