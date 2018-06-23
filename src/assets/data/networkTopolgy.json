@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "0001",
+      "labels": [
+        "网络"
+      ],
+      "type": "network",
+      "name": "网络1"
+    },
+    {
+      "id": "0002",
+      "labels": [
+        "网络"
+      ],
+      "type": "network",
+      "name": "网络2"
+    }
+  ],
+  "edges": [{
+    "id": "edge001",
+    "target": "0002",
+    "source": "0001"
+  }]
+}
